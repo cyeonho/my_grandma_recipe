@@ -50,7 +50,7 @@ def process_one_file(path: Path) -> None:
             out_rows.extend(split_ab_pairs(raw))
 
     if not out_rows:
-        print(f"[{path.name}] ¡æ nothing to write (no TAR AB/BA pairs).")
+        print(f"[{path.name}] nothing to write (no TAR AB/BA pairs).")
         return
 
     out_file = path.parent / f"{path.stem}_fixed"
@@ -58,7 +58,7 @@ def process_one_file(path: Path) -> None:
         writer = csv.writer(fh)
         writer.writerows(out_rows)
 
-    print(f"[{path.name}] ¡æ wrote {len(out_rows):3d} AB/BA rows to {out_file.name}")
+    print(f"[{path.name}] wrote {len(out_rows):3d} AB/BA rows to {out_file.name}")
 
 def main() -> None:
     ap = argparse.ArgumentParser(
